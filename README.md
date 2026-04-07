@@ -4,7 +4,7 @@
 
 # Dependencies
 
-In order to function to have to addtionally setup a device-control server.
+In order to function you have to addtionally setup a device-control server.
 
 Read more about it at: https://github.com/nuriofernandez/devices-control
 
