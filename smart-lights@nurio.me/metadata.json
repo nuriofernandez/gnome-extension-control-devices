@@ -1,0 +1,7 @@
+{
+  "name": "Smart Light Controller",
+  "description": "Control lights via Localhost API",
+  "uuid": "smart-lights@nurio.me",
+  "shell-version": ["45", "46", "47", "48", "49", "50"],
+  "url": "https://nurio.me"
+}

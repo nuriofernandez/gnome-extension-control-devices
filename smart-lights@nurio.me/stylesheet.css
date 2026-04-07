@@ -1,0 +1,63 @@
+.light-grid {
+    padding: 12px;
+    width: 300px;
+    spacing: 16px;
+}
+
+.light-row {
+    spacing: 14px;
+}
+
+.light-button-box {
+    width: 130px;
+    spacing: 4px;
+}
+
+.light-button {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 12px;
+    transition-duration: 150ms;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: white; /* Make sure default icon is white */
+}
+
+.light-button-active {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #242424; /* Dark icon/text when lit */
+}
+
+.light-button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.light-button-active:hover {
+    background-color: rgba(255, 255, 255, 1.0);
+}
+
+.light-button:active {
+    background-color: #3584e4;
+    /* GNOME Active Blue */
+}
+
+.light-refresh-button {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    padding: 8px;
+    transition-duration: 150ms;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.light-refresh-button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.light-refresh-button:active {
+    background-color: #3584e4;
+}
+
+.light-label {
+    font-weight: bold;
+    font-size: 9pt;
+    margin-top: 4px;
+}
