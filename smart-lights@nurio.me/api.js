@@ -25,7 +25,9 @@ export default class ApiClient {
         const message = Soup.Message.new('GET', `${API_BASE}/${id}`);
         message.get_request_headers().append('Authorization', `Bearer ${AUTH_TOKEN}`);
 
-        const bytes = await this._httpSession.send_and_read_async(message, GLib.PRIORITY_DEFAULT, null);
+        const session = new Soup.Session();
+        session.timeout = 5;
+        const bytes = await session.send_and_read_async(message, GLib.PRIORITY_DEFAULT, null);
         return JSON.parse(new TextDecoder().decode(bytes.get_data()));
     }
 

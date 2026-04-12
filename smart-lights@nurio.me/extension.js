@@ -61,6 +61,7 @@ export default class SmartLightExtension extends Extension {
             GLib.Source.remove(this._timeoutId);
             this._timeoutId = null;
         }
+        this._isRefreshing = false;
         this._indicator?.destroy();
         this._indicator = null;
         if (this._apiClient && typeof this._apiClient.destroy === 'function') {
@@ -71,7 +72,18 @@ export default class SmartLightExtension extends Extension {
     }
 
     async refreshStatus() {
-        this._devices.forEach(device => device.updateStatus());
+        if (this._isRefreshing) return;
+        this._isRefreshing = true;
+
+        try {
+            const updates = [];
+            this._devices.forEach((device) => {
+                updates.push(device.updateStatus());
+            });
+            await Promise.allSettled(updates);
+        } finally {
+            this._isRefreshing = false;
+        }
     }
 
     async _buildMenu() {
